@@ -1,0 +1,25 @@
+{
+    "name": "lroth/errbit-php-bundle",
+    "type": "symfony-bundle",
+    "description": "errbit-php symfony2 bundle",
+    "keywords": [ "errbit", "bug"],
+    "homepage": "https://github.com/lroth/LthErrbitBundle",
+    "license": "MIT",
+    "minimum-stability": "dev",
+    "authors": [
+        {
+            "name": "Lukasz Roth",
+            "homepage": "http://www.bitnoi.se/",
+            "email": "labs@bitnoi.se"
+        }
+    ],
+    "require": {
+        "php": ">=5.3.3",
+        "symfony/symfony": "2.*",
+        "emgiezet/errbit-php": "dev-master"
+    },
+    "autoload": {
+        "psr-0": { "Lth\\ErrbitBundle": "" }
+    },
+    "target-dir": "Lth/ErrbitBundle"
+}
