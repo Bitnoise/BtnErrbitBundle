@@ -1,0 +1,14 @@
+services:
+    btn.event_listener.errbit_exception_listener:
+        class: Btn\ErrbitBundle\EventListener\ErrbitExceptionListener
+        arguments:
+            params: %btn_errbit%
+        tags:
+            - { name: kernel.event_listener, event: kernel.exception, method: onKernelException }
+
+    btn.event_listener.errbit_shutdown_listener:
+        class: Btn\ErrbitBundle\EventListener\ErrbitShutdownListener
+        arguments:
+            params: %btn_errbit%
+        tags:
+            - { name: kernel.event_listener, event: kernel.controller, method: register }

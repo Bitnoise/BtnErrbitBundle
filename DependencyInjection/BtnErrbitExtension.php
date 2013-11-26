@@ -22,6 +22,12 @@ class BtnErrbitExtension extends Extension
         $configuration = new Configuration();
         $config = $this->processConfiguration($configuration, $configs);
 
+        if (empty($config['api_key'])) {
+            return;
+        }
+
+        $container->setParameter('btn_errbit', $config);
+
         $loader = new Loader\YamlFileLoader($container, new FileLocator(__DIR__.'/../Resources/config'));
         $loader->load('services.yml');
     }
