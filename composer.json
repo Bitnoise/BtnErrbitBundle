@@ -16,7 +16,7 @@
     "require": {
         "php": ">=5.3.3",
         "symfony/symfony": "2.*",
-        "emgiezet/errbit-php": "dev-master"
+        "emgiezet/errbit-php": "*"
     },
     "autoload": {
         "psr-0": { "Lth\\ErrbitBundle": "" }
