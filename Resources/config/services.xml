@@ -6,11 +6,11 @@
 
     <!--
     <parameters>
-        <parameter key="lth_errbit.example.class">Lth\ErrbitBundle\Example</parameter>
+        <parameter key="Btn_errbit.example.class">Btn\ErrbitBundle\Example</parameter>
     </parameters>
 
     <services>
-        <service id="lth_errbit.example" class="%lth_errbit.example.class%">
+        <service id="Btn_errbit.example" class="%Btn_errbit.example.class%">
             <argument type="service" id="service_id" />
             <argument>plain_value</argument>
             <argument>%parameter_name%</argument>

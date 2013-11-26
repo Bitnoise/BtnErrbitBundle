@@ -1,6 +1,6 @@
 <?php
 
-namespace Lth\ErrbitBundle\Tests\Controller;
+namespace Btn\ErrbitBundle\Tests\Controller;
 
 use Symfony\Bundle\FrameworkBundle\Test\WebTestCase;
 

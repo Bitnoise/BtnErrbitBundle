@@ -1,14 +1,14 @@
 {
-    "name": "lroth/errbit-php-bundle",
+    "name": "bitnoise/errbit-php-bundle",
     "type": "symfony-bundle",
     "description": "errbit-php symfony2 bundle",
-    "keywords": [ "errbit", "bug"],
-    "homepage": "https://github.com/lroth/LthErrbitBundle",
+    "keywords": ["bitnoise", "errbit", "bug"],
+    "homepage": "https://github.com/bitnoise/BtnErrbitBundle",
     "license": "MIT",
     "minimum-stability": "dev",
     "authors": [
         {
-            "name": "Lukasz Roth",
+            "name": "Bitnoise | Lukasz Roth",
             "homepage": "http://www.bitnoi.se/",
             "email": "labs@bitnoi.se"
         }
@@ -19,7 +19,7 @@
         "emgiezet/errbit-php": "*"
     },
     "autoload": {
-        "psr-0": { "Lth\\ErrbitBundle": "" }
+        "psr-0": { "Btn\\ErrbitBundle": "" }
     },
-    "target-dir": "Lth/ErrbitBundle"
+    "target-dir": "Btn/ErrbitBundle"
 }

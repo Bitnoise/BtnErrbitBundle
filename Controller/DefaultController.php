@@ -1,6 +1,6 @@
 <?php
 
-namespace Lth\ErrbitBundle\Controller;
+namespace Btn\ErrbitBundle\Controller;
 
 use Symfony\Bundle\FrameworkBundle\Controller\Controller;
 use Sensio\Bundle\FrameworkExtraBundle\Configuration\Route;
