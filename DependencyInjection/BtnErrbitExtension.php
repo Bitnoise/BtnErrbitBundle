@@ -22,7 +22,7 @@ class BtnErrbitExtension extends Extension
         $configuration = new Configuration();
         $config = $this->processConfiguration($configuration, $configs);
 
-        if (empty($config['api_key'])) {
+        if (empty($config['enabled']) || empty($config['api_key'])) {
             return;
         }
 
