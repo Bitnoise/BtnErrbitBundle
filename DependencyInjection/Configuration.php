@@ -27,6 +27,12 @@ class Configuration implements ConfigurationInterface
                 ->scalarNode('host')->end()
                 ->scalarNode('port')->end()
                 ->scalarNode('environment_name')->end()
+                ->arrayNode('exceptions')
+                    ->addDefaultsIfNotSet()
+                    ->children()
+                        ->booleanNode('not_found_http')->defaultValue(true)->end()
+                    ->end()
+                ->end()
             ->end();
 
         return $treeBuilder;

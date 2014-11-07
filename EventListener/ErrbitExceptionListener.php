@@ -2,15 +2,16 @@
 
 namespace Btn\ErrbitBundle\EventListener;
 
+use Symfony\Component\HttpKernel\Exception\NotFoundHttpException;
 use Symfony\Component\HttpKernel\Event\GetResponseForExceptionEvent;
 use Errbit\Errbit;
 
 class ErrbitExceptionListener
 {
     /**
-     * @var boolean
+     * @var array
      */
-    private $enabled;
+    protected $config;
 
     /**
      * Constructor
@@ -19,7 +20,7 @@ class ErrbitExceptionListener
      */
     public function __construct(array $config)
     {
-        $this->enabled = $config['enabled'];
+        $this->config = $config;
         Errbit::instance()->configure($config);
     }
 
@@ -30,9 +31,15 @@ class ErrbitExceptionListener
      */
     public function onKernelException(GetResponseForExceptionEvent $event)
     {
-        if ($this->enabled) {
-            // get exeption and send to errbit
-            Errbit::instance()->notify($event->getException());
+        if ($this->config['enabled']) {
+            $exception = $event->getException();
+
+            if (!$this->config['exceptions']['not_found_http'] && $exception instanceof NotFoundHttpException) {
+                // skip NotFoundHttpException
+            } else {
+                // get exeption and send to errbit
+                Errbit::instance()->notify($exception);
+            }
         }
     }
 }
