@@ -8,9 +8,7 @@ use Errbit\Errbit;
 
 class ErrbitExceptionListener
 {
-    /**
-     * @var array
-     */
+    /** @var array */
     protected $config;
 
     /**

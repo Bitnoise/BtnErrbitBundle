@@ -1,28 +1,14 @@
 <?php
 
-/*
- * This file is part of the EoAirbrakeBundle package.
- *
- * (c) Eymen Gunay <eymen@egunay.com>
- *
- * For the full copyright and license information, please view the LICENSE
- * file that was distributed with this source code.
- */
-
 namespace Btn\ErrbitBundle\EventListener;
 
 use Symfony\Component\HttpKernel\Event\FilterControllerEvent;
 use Errbit\Errbit;
 
-/**
- * Btn\ErrbitBundle\EventListener\ErrbitShutdownListener
- */
 class ErrbitShutdownListener
 {
-    /**
-     * @var boolean
-     */
-    private $enabled;
+    /** @var boolean */
+    protected $enabled;
 
     /**
      * Constructor
@@ -67,7 +53,7 @@ class ErrbitShutdownListener
 
         $message   = '[Shutdown Error]: %s';
         $message   = sprintf($message, $error['message']);
-        $e = new \ErrorException($message, $error['type'], 0, $error['file'], $error['line']);
-        Errbit::instance()->notify($e);
+        $exception = new \ErrorException($message, $error['type'], 0, $error['file'], $error['line']);
+        Errbit::instance()->notify($exception);
     }
 }

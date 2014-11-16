@@ -6,6 +6,7 @@
     "homepage": "https://github.com/bitnoise/BtnErrbitBundle",
     "license": "MIT",
     "minimum-stability": "dev",
+    "prefer-stable": true,
     "authors": [
         {
             "name": "Bitnoise | Lukasz Roth",
@@ -18,8 +19,22 @@
         "symfony/symfony": "2.*",
         "emgiezet/errbit-php": "*"
     },
-    "autoload": {
-        "psr-0": { "Btn\\ErrbitBundle": "" }
+    "require-dev": {
+        "squizlabs/php_codesniffer": "~2.0.0",
+        "fabpot/php-cs-fixer": "~0.5.0",
+        "phpmd/phpmd": "~2.0.0",
+        "sebastian/phpcpd": "~2.0.0",
+        "asm89/twig-lint": "~1.0.1"
     },
-    "target-dir": "Btn/ErrbitBundle"
+    "config": {
+        "preferred-install": "source"
+    },
+    "autoload": {
+        "psr-4": { "Btn\\ErrbitBundle\\": "src/Btn/ErrbitBundle/" }
+    },
+    "extra": {
+        "branch-alias": {
+            "dev-2.0": "2.0-dev"
+        }
+    }
 }
