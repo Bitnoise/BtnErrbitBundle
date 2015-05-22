@@ -26,6 +26,7 @@ class Configuration implements ConfigurationInterface
                     ->addDefaultsIfNotSet()
                     ->children()
                         ->booleanNode('not_found_http')->defaultValue(true)->end()
+                        ->booleanNode('resource_not_found')->defaultValue(true)->end()
                     ->end()
                 ->end()
             ->end();

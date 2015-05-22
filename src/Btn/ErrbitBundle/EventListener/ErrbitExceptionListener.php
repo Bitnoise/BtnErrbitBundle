@@ -3,6 +3,7 @@
 namespace Btn\ErrbitBundle\EventListener;
 
 use Symfony\Component\HttpKernel\Exception\NotFoundHttpException;
+use Symfony\Component\Routing\Exception\ResourceNotFoundException;
 use Symfony\Component\HttpKernel\Event\GetResponseForExceptionEvent;
 use Errbit\Errbit;
 
@@ -34,10 +35,16 @@ class ErrbitExceptionListener
 
             if (!$this->config['exceptions']['not_found_http'] && $exception instanceof NotFoundHttpException) {
                 // skip NotFoundHttpException
-            } else {
-                // get exeption and send to errbit
-                Errbit::instance()->notify($exception);
+                return;
             }
+
+            if (!$this->config['exceptions']['resource_not_found'] && $exception instanceof ResourceNotFoundException) {
+                // skip ResourceNotFoundException
+                return;
+            }
+
+            // get exeption and send to errbit
+            Errbit::instance()->notify($exception);
         }
     }
 }
